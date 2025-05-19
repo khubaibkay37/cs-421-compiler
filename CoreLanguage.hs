@@ -1,4 +1,4 @@
-module Language where
+module CoreLanguage where
 import Control.Applicative
 import Data.List (intersperse)
 import Data.Char (isAlpha, isDigit)
