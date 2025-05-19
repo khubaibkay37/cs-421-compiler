@@ -9,7 +9,7 @@ import Control.Monad                -- for forM_
 type TiStack   = [Addr]
 type TiDump    = [TiStack]
 type TiHeap    = Heap Node
-type TiGlobals = [(Name, Addr)]
+type TiGlobals = Assoc Name Addr
 type TiState   = (TiStack, TiDump, TiHeap, TiGlobals, [CoreScDefn])
 
 -- Heap nodes for Mark 1
