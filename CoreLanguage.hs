@@ -154,7 +154,8 @@ pprExpr (ECase e alts) =
     where iNl = iConcat [iStr ";", iNewline]
 pprExpr (ELam args body) =
     iConcat [iStr "(\\", pprArgs args, iStr ". ", iIndent (pprExpr body), iStr ")"]
-
+pprExpr (EConstr tag arity) =
+    iConcat [iStr "Pack{", iNum tag, iStr ",", iNum arity, iStr "}"]
 pprAExpr :: CoreExpr -> ISeq
 pprAExpr e | isAtomicExpr e = pprExpr e
 pprAExpr e = iConcat [iStr "(", pprExpr e, iStr ")"]
